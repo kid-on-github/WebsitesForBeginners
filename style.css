@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --transitionSpeed: .15s;
+    --sidebarWidth: 300px;
+    --topbarHeight: 50px;
+    --blue: #232F4D;
+    --red: #DC4E61;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.overline {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+}
+
+.sub2 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #fafafa;
+}
+
+#toggleSidebar {
+    display: none;
+}
+
+#toggleSidebar:checked~.sidebar {
+    left: 0px;
+}
+
+#toggleSidebar:checked~.page {
+    width: calc(100vw - var(--sidebarWidth));
+    left: var(--sidebarWidth);
+}
+
+
+
+
+.toggle {
+    display: inline-block;
+    width: 40px;
+    aspect-ratio: 1/1;
+    background: url("./images/menu.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 32px;
+}
+
+
+#toggleSidebar:checked~.page .toggle {
+    background: url("./images/close.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.sidebar {
+    width: var(--sidebarWidth);
+    height: 100vh;
+    background-color: var(--blue);
+    position: fixed;
+    left: calc(-1 * var(--sidebarWidth));
+    transition: left var(--transitionSpeed);
+}
+
+
+.page {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    transition: width var(--transitionSpeed), left var(--transitionSpeed), right var(--transitionSpeed);
+    top: var(--topbarHeight);
+}
+
+.topbar {
+    width: 100%;
+    height: var(--topbarHeight);
+    background-color: white;
+    border-bottom: 1px solid var(--blue);
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0 16px;
+    align-items: center;
+}
+
+
+
+
+
+.sections {
+    margin: auto;
+    width: min(calc(100vw - var(--sidebarWidth)), 120ch);
+    padding: 50px;
+}
+
+
+section {
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 50px;
+    border: 1px solid var(--blue);
+}
+
+.title {
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--topbarHeight);
+    width: 100%;
+    padding: 8px;
+    background-color: var(--blue);
+    color: white;
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+.content {
+    padding: 8px;
+    height: 800px;
+}
