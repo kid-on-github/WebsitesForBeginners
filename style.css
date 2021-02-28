@@ -2,7 +2,7 @@
 
 :root {
     --transitionSpeed: .15s;
-    --sidebarWidth: 300px;
+    --sidebarWidth: 250px;
     --topbarHeight: 50px;
     --blue: #232F4D;
     --red: #DC4E61;
@@ -25,6 +25,31 @@
     font-weight: 500;
     letter-spacing: 0.1px;
 }
+
+.h6{
+    font-size: 20px;
+    letter-spacing: .15px;
+    font-weight: 500;
+}
+
+.h5{
+    font-size: 24px;
+    letter-spacing: .0px;
+    font-weight: 400;
+}
+
+.h2{
+    font-weight: 300;
+    font-size: 60px;
+    letter-spacing: -.5px;
+}
+
+.p{
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: .5px;
+}
+
 
 body {
     margin: 0;
@@ -75,6 +100,44 @@ body {
     position: fixed;
     left: calc(-1 * var(--sidebarWidth));
     transition: left var(--transitionSpeed);
+    display: flex;
+    flex-flow: column nowrap;
+    /* padding: 48px 32px; */
+}
+
+
+.sidebar > img{
+    background-color: white;
+    border-radius: 4px;
+    width:50%;
+    margin: 40px auto;
+}
+
+.sidebar > hr{
+    width: 100%;
+    border: 1px solid #fafafa;
+    margin: 0 auto;
+}
+
+.sidebar > a{
+    color:white;
+    margin: 0px 0px;
+    
+    /* font-size: 24px;
+    letter-spacing: .0px;
+    font-weight: 400; */
+
+    font-size: 20px;
+    letter-spacing: .15px;
+    font-weight: 500;
+
+    text-decoration: none;
+    padding:12px 24px;
+    transition: background-color var(--transitionSpeed);
+}
+
+.sidebar > a:hover{
+    background-color: rgba(255,255,255,.2);
 }
 
 
@@ -112,6 +175,7 @@ body {
 
 
 section {
+    scroll-margin-top: calc( var(--topbarHeight) + 50px);
     width: 100%;
     background-color: white;
     border-radius: 4px;
@@ -135,6 +199,45 @@ section {
 }
 
 .content {
-    padding: 8px;
-    height: 800px;
+    padding: 0px 64px 80px 64px;
+    /* height: 800px; */
+}
+
+.content > h2{
+    font-weight: 300;
+    font-size: 60px;
+    letter-spacing: -.5px;
+    margin:64px 0 8px 0;
+}
+
+.content > p, .content > a{
+    font-size: 24px;
+    letter-spacing: .0px;
+    font-weight: 400;
+    margin:4px;
+}
+
+.content a{
+    color:var(--red);
+    text-decoration: none;
+}
+
+.content > a{
+    display: block;
+    /* margin: 8px 0; */
+}
+
+li{
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin:0;
+}
+
+ul{
+    margin: 4px 0;
+}
+
+.cp_embed_wrapper{
+    margin: 32px 0;
 }
